@@ -231,7 +231,7 @@ private fun WeatherScreen(
             Text(it, style = MaterialTheme.typography.displaySmall, textAlign = TextAlign.Justify)
         }
         uiState.dt?.let {
-            val localDateTime = Instant.fromEpochMilliseconds(it)
+            val localDateTime = Instant.fromEpochSeconds(it)
                 .toLocalDateTime(TimeZone.currentSystemDefault()).date.format(format = LocalDate.Format {
                     dayOfWeek(names = DayOfWeekNames.ENGLISH_ABBREVIATED)
                     char(',')
